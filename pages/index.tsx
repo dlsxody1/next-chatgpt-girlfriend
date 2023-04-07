@@ -10,12 +10,14 @@ export default function Home() {
         <div className="h-[900px] w-[900px] bg-white">
           {session ? (
             <>
-              <div>{session?.user?.name}님 안녕하세요 !</div>
+              <div>{session?.user.name}님 안녕하세요 !</div>
               <button
                 onClick={() => {
                   signOut();
                 }}
-              ></button>
+              >
+                로그아웃!
+              </button>
             </>
           ) : (
             <>

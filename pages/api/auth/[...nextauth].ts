@@ -1,5 +1,6 @@
 import NextAuth from "next-auth/next";
 import KakaoProvider from "next-auth/providers/kakao";
+
 export default NextAuth({
   session: {
     strategy: "jwt",

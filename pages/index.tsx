@@ -1,6 +1,7 @@
 import ChatBox from "./components/ChatBox";
-import { signIn, useSession, signOut } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import type { Adapter } from "next-auth/adapters";
+import Register from "./api/auth/Register";
 export default function Home() {
   const { data: session } = useSession();
 
@@ -8,17 +9,9 @@ export default function Home() {
     <>
       <div className="h-screen bg-black flex items-center justify-center">
         <div className="h-[900px] w-[900px] bg-white">
+          hihi
           {session ? (
-            <>
-              <div>{session?.user.name}님 안녕하세요 !</div>
-              <button
-                onClick={() => {
-                  signOut();
-                }}
-              >
-                로그아웃!
-              </button>
-            </>
+            <Register session={session} />
           ) : (
             <>
               <div className="text-5xl">
